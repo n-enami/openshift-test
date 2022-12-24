@@ -5,10 +5,10 @@ RUN mkdir test
 
 # failed to initialize build cache at /go/test: mkdir /go/test/00: permission denied
 # が発生した為、追記
-RUN chgrp -R 0 /test && \
-    chmod -R g=u /test
+RUN chgrp -R 0 test && \
+    chmod -R g=u test
 
-COPY main.go test/
+COPY main.go test
 
 USER 1001
 
